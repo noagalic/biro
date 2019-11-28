@@ -1,0 +1,23 @@
+#boi {
+	background-color: rgba(35, 148, 216);
+	display: inline-grid;
+	top: 0;
+	width: 100%;
+	grid-template-columns: 140px auto 140px;
+}
+
+#ele {
+	position: absolute;
+}
+
+#bla {
+	position: absolute;
+	margin: auto;
+	justify-self: end;
+}
+
+#log {
+ width: 136px;
+ height: 66px;
+ left: 0;
+}

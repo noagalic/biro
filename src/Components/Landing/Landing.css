@@ -1,4 +1,4 @@
-body {
+#LandingMain {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,7 +9,6 @@ body {
 }
 
 .particles {
-  z-index: -100;
   position: absolute;
   top: 0;
   left: 0;
@@ -25,7 +24,7 @@ body {
   align-items: center;
   text-align: center;
   position: absolute;
-  z-index: 1;
+  z-index: 3;
   width: 595px;
   height: 595px;
   border-radius: 50%;
@@ -47,6 +46,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  z-index: 2;
 
 }
 

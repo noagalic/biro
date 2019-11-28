@@ -23,9 +23,9 @@ const doit = () => {
 	}`;
 	document.head.appendChild(style);}
 
-const Landing = () => {
+const Landing = ({ onRouteChange }) => {
 	return (
-		<div>
+		<div id="LandingMain">
 		<Particles className='particles' class="particles" params={particlesOptions} />
 		<img alt="" class="logo" src={require("./FSB_Logo.png")} />
 		<main id="foo" className="pa4 black-80">
@@ -44,7 +44,7 @@ const Landing = () => {
 			      <label className="pa0 ma0 lh-copy f6 pointer"><input type="checkbox" /> Zapamti me</label>
 			    </fieldset>
 			    <div className="">
-			      <input className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" type="submit" value="Prijavi me" />
+			      <input onClick= {() => onRouteChange('home')} className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" type="submit" value="Prijavi me" />
 			    </div>
 			</form>
 			</div>
