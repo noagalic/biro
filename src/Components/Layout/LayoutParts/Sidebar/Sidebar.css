@@ -1,0 +1,26 @@
+#searchBar {
+	width: 65%;
+	margin-top: 15px;
+}
+
+#sidebarElements {
+	margin-top: 80px;
+	border-top: 1px solid grey;
+	position: absolute;
+	right: 0px;
+	left: 0px;
+}
+
+#sidebar {
+	background-image: url("bg.jpg");
+	background-repeat: no-repeat;
+  	background-size: auto;
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	top: 67px;
+	bottom: 0px;
+	right: 0px;
+	width: 25%;
+	border-left: 2px solid grey;
+}

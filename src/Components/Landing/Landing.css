@@ -16,7 +16,7 @@
   height: 100%;
 }
 
-.logo {
+#logo {
   transition: 1s;
   display: flex;
   flex-direction: column;
@@ -31,7 +31,7 @@
   border: 5px solid black;
 }
 
-.logo:hover {
+#logo:hover {
   opacity: 0.2;
   z-index: -1;
 }

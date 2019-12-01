@@ -13,7 +13,7 @@ const Navbar = () => {
 	return (
 		<Router>
 			<nav id="boi" className="bb b--black-10">
-			<img src={require("./BIRO.png")} id="log" />
+			<img src={require("./BIRO.png")} id="log" alt="loading" />
 		      <div id="bla" className="flex-grow pa3 flex">
 		              <Link to="/" className="f3 link dib black dim mr3 mr4-ns">Home</Link>
 		              <Link to="/about" className="f3 link dib black dim mr3 mr4-ns">About</Link>
