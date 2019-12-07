@@ -11,6 +11,8 @@ class App extends Component {
     this.state = {
       isSignedIn: false, //Kasnije za backend
       route: 'signin', //Routes, sad koristi router
+      isVisible: false,
+      input: '',
     }
   }
 
@@ -24,14 +26,20 @@ class App extends Component {
     this.setState({route: route});
   }
 
+  onInputChange = (event) => {
+    this.setState({input: event.target.value});
+    console.log(this.state.input);
+  }
+
+
 
   render() {
     const { isSignedIn, route } = this.state;
     return(
       <div className="App">
-          { route === 'home'
-              ? <Layout onRouteChange={this.onRouteChange} />
-              : <Landing isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
+          { (route === 'home')
+              ?<Layout onRouteChange={this.onRouteChange} route={route} onInputChange={this.onInputChange} />
+              :<Landing isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
           }
       </div>
       )

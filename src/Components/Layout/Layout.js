@@ -1,31 +1,47 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Navbar from './LayoutParts/Navbar/Navbar';
 import "./Layout.css";
 import Sidebar from './LayoutParts/Sidebar/Sidebar';
+import "../Main.css";
+import PostCard from "./LayoutParts/PostCards/PostCards";
 
 
-class Layout extends Component {
-	constructor() {
-		super();
-		this.state = {
-			isVisible: false,
-			input: '',
+const Layout = ({ onRouteChange, onInputChange, route}) => {
+	const Routing = (route) => {
+		const main = () => {
+			return(
+				<div>
+					<Navbar onRouteChange = {onRouteChange} route = {route} />
+					<Sidebar onInputChange = {onInputChange} />
+					<div id="default">
+						{Routing}
+					</div>
+				</div>
+			)
 		}
-	}
+		if (route === "forum") {
+			return(
+				<div>
+				{main}
+				<PostCard />
+				</div>
+				)
+		}
+			else {
+				console.log("nada")
+			}
+		}
 
-	onInputChange = (event) => {
-		this.setState({input: event.target.value});
-		console.log(this.state.input);
-	}
 
-	render() {
 		return(
 			<div>
-				<Navbar />
-				<Sidebar onInputChange = { this.onInputChange } />
+				<Navbar onRouteChange = {onRouteChange} route = {route} />
+				<Sidebar onInputChange = {onInputChange} />
+				<div id="default">
+					{Routing}
+				</div>
 			</div>
 		)
-	}
 }
 
 export default Layout;
