@@ -3,7 +3,6 @@ import './App.css';
 import 'tachyons';
 import Landing from './Components/Landing/Landing';
 import Layout from './Components/Layout/Layout';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 class App extends Component {
 
@@ -11,8 +10,17 @@ class App extends Component {
     super();
     this.state = {
       input: '',
+      posts: [],
+      isVisible: false,
     }
   }
+
+  componentDidMount() {
+    fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(response => response.json())
+    .then(posts => this.setState({ posts: posts }));
+  }
+
 
   onInputChange = (event) => {
     this.setState({input: event.target.value});
@@ -22,7 +30,7 @@ class App extends Component {
   render() {
     return(
       <div className = "App">
-        <Layout onInputChange={this.onInputChange} />
+        <Layout onInputChange={this.onInputChange} postLoad = {this.state.posts} isVisible={this.state.isVisible}/>
       </div>
     )
   }

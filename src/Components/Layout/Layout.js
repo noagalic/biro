@@ -4,18 +4,19 @@ import "./Layout.css";
 import Sidebar from './LayoutParts/Sidebar/Sidebar';
 import "../Main.css";
 import PostList from "./LayoutParts/PostList/PostList";
-import PostCard from "./LayoutParts/PostCards/PostCards";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
-const Layout = () => {
+const Layout = ({ postLoad, isVisible }) => {
 		return(
 			<div>
 				<Navbar />
-				<Sidebar />
+				{ (isVisible===true)
+					?<Sidebar />
+					:<div></div>}
 				<Router>
 					<Switch>
-						<Route path="/forum" component={PostList}/>
+						<Route path="/forum" component={() => <PostList postLoad={postLoad} />} />
 					</Switch>
 				</Router>
 			</div>

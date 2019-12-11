@@ -1,0 +1,9 @@
+#postList {
+	justify-content: center;
+	margin-right: auto;
+	margin-top: 72px;
+	margin-left: 25%;
+	border-left: 2px solid grey;
+	background-color: rgba(35, 148, 216, 0.2);
+	margin-right: 25%;
+}

@@ -12,15 +12,17 @@
 }
 
 #sidebar {
+	min-height: 100%;
+	z-index: 1;
 	background-image: url("bg.jpg");
 	background-repeat: no-repeat;
   	background-size: auto;
 	display: flex;
 	justify-content: center;
-	position: absolute;
+	position: fixed;
 	top: 67px;
 	bottom: 0px;
 	right: 0px;
-	width: 25%;
+	width: 22%;
 	border-left: 2px solid grey;
 }

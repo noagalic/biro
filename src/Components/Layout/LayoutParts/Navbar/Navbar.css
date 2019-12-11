@@ -1,7 +1,11 @@
 #boi {
+	z-index: 1;
+	position: fixed;
+	min-height: 66px;	
 	background-color: rgba(35, 148, 216);
 	display: inline-grid;
 	top: 0;
+	right: 0px;
 	width: 100%;
 	grid-template-columns: 140px auto 140px;
 }
@@ -12,8 +16,7 @@
 
 #bla {
 	position: absolute;
-	margin: auto;
-	justify-self: end;
+	justify-self: center;
 }
 
 #log {

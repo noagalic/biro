@@ -9,7 +9,7 @@ const Navbar = () => {
 		<Router>
 			<nav id="boi" className="bb b--black-10">
 			<img src={require("./BIRO.png")} id="log" alt="loading" />
-		      <div id="bla" className="flex-grow pa3 flex">
+		      <div id="bla">
 		              <Link to="/">
 		              	<p className="f3 link pointer dib black dim mr3 mr4-ns">Home</p>
 		              </Link>
