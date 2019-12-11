@@ -3,43 +3,21 @@ import Navbar from './LayoutParts/Navbar/Navbar';
 import "./Layout.css";
 import Sidebar from './LayoutParts/Sidebar/Sidebar';
 import "../Main.css";
+import PostList from "./LayoutParts/PostList/PostList";
 import PostCard from "./LayoutParts/PostCards/PostCards";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
-const Layout = ({ onRouteChange, onInputChange, route}) => {
-	const Routing = (route) => {
-		const main = () => {
-			return(
-				<div>
-					<Navbar onRouteChange = {onRouteChange} route = {route} />
-					<Sidebar onInputChange = {onInputChange} />
-					<div id="default">
-						{Routing}
-					</div>
-				</div>
-			)
-		}
-		if (route === "forum") {
-			return(
-				<div>
-				{main}
-				<PostCard />
-				</div>
-				)
-		}
-			else {
-				console.log("nada")
-			}
-		}
-
-
+const Layout = () => {
 		return(
 			<div>
-				<Navbar onRouteChange = {onRouteChange} route = {route} />
-				<Sidebar onInputChange = {onInputChange} />
-				<div id="default">
-					{Routing}
-				</div>
+				<Navbar />
+				<Sidebar />
+				<Router>
+					<Switch>
+						<Route path="/forum" component={PostList}/>
+					</Switch>
+				</Router>
 			</div>
 		)
 }
